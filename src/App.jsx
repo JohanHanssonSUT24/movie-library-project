@@ -108,10 +108,24 @@ const searchMovies = useCallback(async (query) => {
       <header>
         <h1>Moviecomponentslibrary</h1>
         <SearchField onSearch={searchMovies} initialSearch={searchTerm} />
+        <nav>
+          <button onClick={() => setView('search')}>Sök</button>
+          <button onClick={() => setView('favorites')}>Favoriter</button>
+          <button onClick={() => setView('tutorial')}>Tutorial</button>
+        </nav>
       </header>
+      <main>
+        {renderView()}
+      </main>
 
-
+      <footer>
+        <p>
+          Hasses filmdatabas!
+        </p>
+      </footer>
     </div>
-  )
+  );
 
 }
+
+export default App;
