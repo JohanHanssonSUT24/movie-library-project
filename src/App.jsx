@@ -39,7 +39,7 @@ const searchMovies = useCallback(async (query) => {
       console.error(data.Error);
     }
   } catch (error){
-    console.error("Fel vid hämtning av data:", error);
+    console.error("Error fetching data:", error);
   }
   }, []);
 
@@ -56,7 +56,7 @@ const searchMovies = useCallback(async (query) => {
         console.error(data.Error);
       }
     }catch (error){
-      console.error("Fel vid sökning:", error);
+      console.error("Unexpected error occured:", error);
     }
   }, []);
   useEffect(() => {
@@ -71,6 +71,47 @@ const searchMovies = useCallback(async (query) => {
       setFavorites([...favorites, movie]);
     }
   };
+  //Create interface
 
-  
+  //Render view
+  const renderView = () => {
+    if(view === 'details' && selectedMovie){
+      return(
+        <MovieDetails
+        movie={selectedMovie}
+        onToggleFavorite={toggleFavorite}
+        isFavorite={favorites.some(fav => fav.imdbID === selectedMovie.imdbID)}
+        />
+      );
+    }
+    if(view === 'favorites'){
+      return(
+        <FavoritesList
+        favorites={favorites}
+        onMovieSelect={fetchMovieDetails}
+        onToggleFavorite={toggleFavorite}
+        />
+      );
+    }
+    if(view === 'tutorial'){
+      return <TutorialView onMovieSelect={fetchMovieDetails} />;
+    }
+    return(
+      <MovieList
+      movies={movies}
+      onMovieSelect={fetchMovieDetails}
+      />
+    );
+  };
+  return (
+    <div className="app-container">
+      <header>
+        <h1>Moviecomponentslibrary</h1>
+        <SearchField onSearch={searchMovies} initialSearch={searchTerm} />
+      </header>
+
+
+    </div>
+  )
+
 }
