@@ -4,6 +4,7 @@ import MovieList from './components/MovieList';
 import MovieDetails from './components/MovieDetails';
 import FavoritesList from './components/FavoritesList';
 import TutorialView from './components/TutorialView';
+import './styles/App.css';
 
 //Get API-key
 const API_KEY = import.meta.env.VITE_OMDB_API_KEY;

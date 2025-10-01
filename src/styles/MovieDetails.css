@@ -1,0 +1,52 @@
+.movie-details {
+    display: flex;
+    max-width: 900px;
+    margin: 40px auto;
+    gap: 30px;
+    border: 1px solid #e0e0e0;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    background-color: white;
+    text-align: left;
+}
+
+.details-poster {
+    width: 300px;
+    height: auto;
+    min-width: 300px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.details-info h2 {
+    margin-top: 0;
+    color: #1a1a1a;
+}
+
+.details-info p {
+    margin: 10px 0;
+    line-height: 1.6;
+}
+
+.fav-button {
+    padding: 12px 20px;
+    margin: 15px 0 25px 0;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: all 0.2s;
+}
+
+.fav-button:not(.favorited) {
+    background-color: #eee;
+    color: #333;
+}
+
+.fav-button.favorited {
+    background-color: #ffc400; 
+    color: #333;
+    font-weight: bold;
+    box-shadow: 0 0 5px rgba(255,196,0,0.5);
+}
