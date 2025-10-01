@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import '../styles/Shared.css';
 
 function SearchField({onSearch, initialSearch}){
     const [query, setQuery] = useState(initialSearch);
@@ -9,15 +10,14 @@ function SearchField({onSearch, initialSearch}){
         }
     };
     return (
-        <form onSubmit={handleSubmit} style={{margin: '20px o'}}>
+        <form onSubmit={handleSubmit} className="search-form">
             <input
                 type="text"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="Sök film"
-                style={{padding: '8px', marginRight: '10px'}}
             />
-            <button type="submit" style={{padding: '8px 15px'}}>Sök</button>
+            <button type="submit" className="search-button">Sök</button>
         </form>
     );
 }
