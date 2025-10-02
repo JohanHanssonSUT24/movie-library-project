@@ -37,7 +37,16 @@ function App(){
       const response = await fetch(url);
       const data = await response.json();
       if(data.Response === "True") {
-        setMovies(data.Search);
+        const uniqueMovies = [];
+        const ids = new Set();
+
+        data.Search.forEach(movie =>{
+          if( !ids.has(movie.imdbID)){
+            uniqueMovies.push(movie);
+            ids.add(movie.imdbID);
+          }
+        });
+        setMovies(uniqueMovies);
       } else{
         setMovies([]);
         console.error(data.Error);

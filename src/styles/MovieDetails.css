@@ -50,3 +50,32 @@
     font-weight: bold;
     box-shadow: 0 0 5px rgba(255,196,0,0.5);
 }
+.fav-button.add-favorite {
+    background-color: #28a745; /* Grön */
+    color: white;
+    border: 1px solid #28a745;
+}
+
+.fav-button.add-favorite:hover {
+    background-color: #1e7e34;
+}
+
+.fav-button.remove-favorite {
+    background-color: #dc3545; /* Röd */
+    color: white;
+    border: 1px solid #dc3545;
+}
+
+.fav-button.remove-favorite:hover {
+    background-color: #bd2130;
+}
+.rating-stars {
+    display: inline-block; 
+    color: #ccc; 
+    font-size: 1.2em;
+    margin-right: 10px;
+}
+
+.rating-stars .filled {
+    color: gold;
+}
