@@ -7,7 +7,7 @@ import MovieDetails from "./MovieDetails";
 
 const dummyMovie = {
     Title: "Dummy movie",
-    Year: "20XX",
+    Year: "YYYY",
     imdbID: "tt1234567",
     Type: "Movie",
     Poster: "https://via.placeholder.com/200x300?text=MovieCard+Example"
@@ -21,13 +21,13 @@ const dummyList = [
     }
 ];
 function TutorialView({ onMovieSelect}){
-    const dummySearch = (query) => {
-        alert(`Search initiated with: ${query}`);
+    const dummySearch = (query, year) => {
+        console.log(`Search initiated with Title: "${query}" and Year: "${year || 'N/A'}"`);
         
     };
 
     const dummyToggle = () =>{
-        alert("Toggle favorite clicked!")
+        console.log("Toggle favorite clicked!")
     };
     return(
         <div className="tutorial-view">
@@ -35,7 +35,7 @@ function TutorialView({ onMovieSelect}){
 
             <div className="tutorial-section">
                 <h3>1. SearchField</h3>
-                <p>Accepts <code>onSearch</code> prop to handle search logic in parent-component(App.jsx)</p>
+                <p>Accepts <code>onSearch</code> two props to handle search logic in parent-component(App.jsx)</p>
                 <h4>Rendering:</h4>
                 <SearchField onSearch={dummySearch} initialSearch={"text"}/>
                 <h4>Example: </h4>
