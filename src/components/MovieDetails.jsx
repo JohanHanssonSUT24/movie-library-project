@@ -18,10 +18,10 @@ const renderStars = (rating) => {
         {stars}
     </span>);
 }
-
-function MovieDetails({movie, onToggleFavorite, isFavorite}){
+//Shows complete info about chosen movie and handles favorite-button
+function MovieDetails({movie, onToggleFavorite, isFavorite}){//Uses prop "movie", onToggleFavorite to change favorites and isFavorite to check current status.
     const posterUrl = movie.Poster === 'N/A'? 'https://via.placeholder.com/300x450?text=No+Picture' : movie.Poster;
-    const buttonText = isFavorite ? 'Remove from favorites' : 'Add to favorites';
+    const buttonText = isFavorite ? 'Remove from favorites' : 'Add to favorites';//Changes text on button if a favorite or not
     const buttonClass = isFavorite ? 'remove-favorite' : 'add-favorite';
     const ratingExists = movie.imdbRating && movie.imdbRating !== 'N/A';
     return(

@@ -75,7 +75,7 @@ const searchMovies = useCallback(async (query, year) => {
         console.error("Error fetching data:", error);
         setMovies([]);
     }
-}, [API_KEY]); //Ends useCallback. Creates new array ONLY if the content has changed.
+}, [API_KEY]); //Ends useCallback. Re-Creates function ONLY if the content has changed.
 
 
   const fetchMovieDetails = useCallback(async (id) => {//Function takes "id" as an arugment
@@ -95,7 +95,7 @@ const searchMovies = useCallback(async (query, year) => {
     }catch (error){
       console.error("Unexpected error occured:", error);
   } 
-  }, [API_KEY]); //Ends useCallback. Creates new array ONLY if the content has changed.
+  }, [API_KEY]); //Ends useCallback. Re-Creates function ONLY if the content has changed.
 
   useEffect(() => { //Initial search when application starts to show initial movies
 
@@ -122,7 +122,7 @@ const searchMovies = useCallback(async (query, year) => {
         />
       );
     }
-    if(view === 'favorites'){
+    if(view === 'favorites'){//View favorite-movie-list
       return(
         <FavoritesList
           favorites={favorites}
@@ -130,7 +130,7 @@ const searchMovies = useCallback(async (query, year) => {
         />
       );
     }
-    if(view === 'tutorial'){
+    if(view === 'tutorial'){//View tutorial
       return <TutorialView onMovieSelect={fetchMovieDetails} />;
     }
     return(

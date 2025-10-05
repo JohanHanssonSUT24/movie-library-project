@@ -2,6 +2,7 @@ import React from "react";
 import MovieCard from "./MovieCard";
 import '../styles/Shared.css';
 
+//Shows a list of MovieCard for search result
 function MovieList({movies, onMovieSelect}){
     if(movies.length === 0){
         return <p className="no-results">No movies found. Try another.</p>;

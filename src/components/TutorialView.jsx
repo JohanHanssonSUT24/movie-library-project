@@ -4,7 +4,7 @@ import SearchField from "./SearchField";
 import '../styles/TutorialView.css'
 import MovieList from "./MovieList";
 import MovieDetails from "./MovieDetails";
-
+//Dokumentation-view on how to use the other components.
 const dummyMovie = {
     Title: "Dummy movie",
     Year: "YYYY",
